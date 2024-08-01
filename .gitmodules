@@ -1,3 +1,0 @@
-[submodule "workspace/trafficMonitor"]
-	path = workspace/trafficMonitor
-	url = git@github.com:altoliaw/trafficMonitor.git
