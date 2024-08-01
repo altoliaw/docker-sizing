@@ -1,0 +1,23 @@
+# /**
+# * Setting of containers for developing html web pages.
+# *
+# * @author Nick
+# * @date 01/08/2024
+# * @detail Please use compose to execute the yaml file
+# */
+version: "3.8"
+
+services:
+  redhat8_7:
+    build: ./redhat8_7
+    container_name: redhat8_7
+    working_dir: /programs
+    restart: unless-stopped
+    volumes:
+      - "./workspace:/programs"
+    networks:
+      - dev
+    command: tail -f /dev/null
+
+networks:
+  dev:
