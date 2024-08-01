@@ -9,8 +9,8 @@ version: "3.8"
 
 services:
   redhat8_7:
-    build: ./redhat8_7
-    container_name: redhat8_7
+    build: ./centos8_4
+    container_name: centos8_4
     working_dir: /programs
     restart: unless-stopped
     volumes:
