@@ -15,9 +15,9 @@ services:
     restart: unless-stopped
     volumes:
       - "./workspace:/programs"
+      - "./centos8_4/build.sh:/home/build.sh"
     networks:
       - dev
-    command: tail -f /dev/null
-
+    command: /bin/bash -c "cd /home && ./build.sh && tail -f /dev/null"
 networks:
   dev:
