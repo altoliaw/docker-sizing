@@ -12,7 +12,7 @@ RUN cd /etc/yum.repos.d/  && \
 	sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
 
-RUN yum install -y git gcc gcc-c++ glibc-devel make cmake libstdc++-devel sudo && \
+RUN yum install -y git gcc gcc-c++ glibc-devel make cmake libstdc++-devel sudo jq && \
 	yum groupinstall -y "Development Tools"
 
 
