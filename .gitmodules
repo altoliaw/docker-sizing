@@ -1,0 +1,3 @@
+[submodule "workspace/native-sizing"]
+	path = workspace/native-sizing
+	url = git@github.com:altoliaw/native-sizing.git
