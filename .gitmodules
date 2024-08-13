@@ -1,3 +1,6 @@
 [submodule "workspace/native-sizing"]
+################################################################
+# url: git@192.168.170.12:common-library/native-sizing.git
+# url: git@github.com:altoliaw/native-sizing.git
 	path = workspace/native-sizing
 	url = git@github.com:altoliaw/native-sizing.git
