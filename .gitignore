@@ -1,0 +1,9 @@
+# Directories
+Bin
+
+# Files
+# *.o
+# *.gz
+
+# Specified files
+# commonTmp.mk
