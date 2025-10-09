@@ -8,31 +8,31 @@
 version: "3.8"
 
 services:
-  # redhat8_7:
-  #   build: ./centos8_4
-  #   container_name: centos8_4
-  #   working_dir: /programs
-  #   restart: unless-stopped
-  #   volumes:
-  #     - "./workspace:/programs"
-  #     - "./Bin:/media"
-  #     - "./centos8_4/build.sh:/home/build.sh"
-  #   networks:
-  #     - dev
-  #   command: /bin/bash -c "cd /home && ./build.sh && touch /tmp/done && tail -f /dev/null"
-  #   healthcheck:
-  #     test: ["CMD", "test", "-f", "/tmp/done"]
-  #     interval: 20s
-  #     timeout: 3s
-  #     retries: 10
+  redhat8_7:
+    build: ./centos8_4
+    container_name: centos8_4
+    working_dir: /programs
+    restart: unless-stopped
+    volumes:
+      - "./workspace:/programs"
+      - "./Bin:/media"
+      - "./centos8_4/build.sh:/home/build.sh"
+    networks:
+      - dev
+    command: /bin/bash -c "cd /home && ./build.sh && touch /tmp/done && tail -f /dev/null"
+    healthcheck:
+      test: ["CMD", "test", "-f", "/tmp/done"]
+      interval: 20s
+      timeout: 3s
+      retries: 10
   centos7:
     build: ./centos7
     container_name: centos7
     working_dir: /programs
     restart: unless-stopped
-    # depends_on: # This container will execute after the container, redhat8_7, finished
-    #   redhat8_7:
-    #     condition: service_healthy
+    depends_on: # This container will execute after the container, redhat8_7, finished
+      redhat8_7:
+        condition: service_healthy
     volumes:
       - "./workspace:/programs"
       - "./Bin:/media"
